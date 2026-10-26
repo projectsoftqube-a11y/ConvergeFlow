@@ -15,16 +15,16 @@ export const AUDIENCE_PAGES: SitePage[] = [
     label: "Dental practices",
     group: "audiences",
     seo: {
-      title: "Managed Dental Billing Services | ConvergeFlow",
+      title: "Managed Dental Billing & Coding Services | ConvergeFlow",
       description:
-        "Dental billing, fully managed: benefits verified before treatment, CDT-accurate claims matched to the clinical record and balances resolved with a documented owner.",
+        "Dental billing, fully managed: benefits verified before treatment, CDT codes matched to the chart and balances resolved with a named owner.",
     },
     hero: {
       eyebrow: "Dental coding & billing",
       title: "Dental billing, fully managed.",
       accent: "From the chair to a closed account.",
       lead: "ConvergeFlow handles verification, CDT coding, claims, payments and follow-up for US dental practices, so your team can focus on patients.",
-      actions: [DEMO, { label: "Download the dental brochure", href: "/resources/" }],
+      actions: [DEMO, { label: "See brochures", href: "/resources/" }],
       visual: {
         kind: "photo",
         photo: { src: "/assets/photos/v2/audience-dental.jpg", alt: "Dentist explaining a treatment with a tooth model to a patient in the chair", caption: "From the chair…" },
@@ -121,7 +121,7 @@ export const AUDIENCE_PAGES: SitePage[] = [
         q: "Is this a software subscription or a service?",
         a: "A fully managed service. Our specialists own the agreed work across verification, coding, claims, payments and follow-up; workflow technology supports them.",
       },
-      { q: "Do you work with OpenDental?", a: "Yes. We start with OpenDental, so results land where your staff already look. Other systems are confirmed during scoping." },
+      { q: "Do you work with OpenDental?", a: "Yes. We start with OpenDental practices. How results reach your team is confirmed with you during setup. Other systems are confirmed during scoping." },
       { q: "Do you handle orthodontic and periodontic billing?", a: "Yes, as specialty workflows within your agreed scope: lifetime limits, age rules and installment billing for orthodontics; clinical evidence and history for periodontics and prosthodontics." },
       { q: "Will you guarantee our collections?", a: "No. Targets are set from your baseline and agreed scope, and final payment always depends on payer adjudication." },
     ],
@@ -141,11 +141,11 @@ export const AUDIENCE_PAGES: SitePage[] = [
     seo: {
       title: "RCM for DSOs & Group Dental Practices | ConvergeFlow",
       description:
-        "Managed revenue cycle work for DSOs and group practices, with location and central responsibilities, escalation and reporting agreed before the work starts.",
+        "Managed revenue cycle work for DSOs and group practices, with location and central responsibilities, escalation and reporting agreed up front.",
     },
     hero: {
       eyebrow: "DSOs & group practices",
-      title: "Billing support for groups,",
+      title: "Revenue cycle support for DSOs and groups,",
       accent: "agreed location by location.",
       lead: "Groups often split revenue cycle work between locations and a central team. We agree which work sits where, who escalates to whom and how we report, before the work starts.",
       actions: [DEMO, { label: "Dental billing scope", href: "/industries/dental/" }],
@@ -193,7 +193,7 @@ export const AUDIENCE_PAGES: SitePage[] = [
           { icon: "building", title: "Location context", body: "Providers, service locations and payer mix for each practice in scope." },
           { icon: "chart", title: "Reporting requirements", body: "Which measures your group reviews, and at what level, defined with you." },
           { icon: "lock", title: "Access boundaries", body: "Who can see which locations and evidence, agreed before access is granted." },
-          { icon: "link", title: "Systems", body: "Practice systems across locations, starting with OpenDental." },
+          { icon: "link", title: "Systems", body: "Practice systems confirmed location by location, starting with OpenDental." },
         ],
       },
       {
@@ -208,11 +208,16 @@ export const AUDIENCE_PAGES: SitePage[] = [
           { title: "Extend", body: "Add locations or stages on the same agreed model." },
         ],
       },
+      {
+        kind: "statement",
+        text: "Targets are set from your baseline and agreed scope.",
+        accent: "No reimbursement outcome is guaranteed.",
+      },
     ],
     faq: [
       { q: "Can you report across all of our locations?", a: "Reporting is defined with you during scoping. Tell us which measures your group reviews and at what level, and we'll confirm what the service will provide." },
-      { q: "Do all locations need to start at once?", a: "No. Many groups start with one location or one stage, confirm the operating model, then extend it." },
-      { q: "How are access permissions handled?", a: "Access is approved and agreed before it is granted, including which locations and evidence each person can see." },
+      { q: "Do all locations need to start at once?", a: "No. You can start with one location or one stage, confirm the operating model, then extend it." },
+      { q: "How are access permissions handled?", a: "Access is approved by your organization and agreed before it is granted. Your access and reporting requirements are confirmed with you during scoping." },
     ],
     cta: {
       title: "Bring one location's workflow.",
@@ -230,11 +235,11 @@ export const AUDIENCE_PAGES: SitePage[] = [
     seo: {
       title: "Managed Medical Billing & RCM Services | ConvergeFlow",
       description:
-        "Managed revenue cycle support for medical practices: coverage verified before the visit, documentation and claims reviewed, and payments, denials and A/R followed to resolution.",
+        "Managed revenue cycle support for medical practices: coverage verified before the visit, claims scrubbed and sent, and payments and A/R followed up.",
     },
     hero: {
       eyebrow: "Medical practices",
-      title: "Your revenue cycle,",
+      title: "Medical billing and revenue cycle,",
       accent: "fully managed.",
       lead: "From verified coverage before the visit to a reconciled account after it. ConvergeFlow's team supports medical practices across verification, claims, payments and follow-up, within a scope agreed for your practice.",
       actions: [DEMO, { label: "Explore services", href: "/services/" }],
@@ -256,6 +261,7 @@ export const AUDIENCE_PAGES: SitePage[] = [
           { title: "After care & submission", body: "Documentation and coding review, charge capture, claim scrubbing, electronic submission and claim status.", href: "/services/claims-submission/" },
           { title: "Payment & resolution", body: "Payment posting, secondary billing, denials and appeals, A/R follow-up and patient billing.", href: "/services/ar-management/" },
         ],
+        note: "Automation supports staff review. Final payment always depends on payer adjudication.",
       },
       {
         kind: "cards",

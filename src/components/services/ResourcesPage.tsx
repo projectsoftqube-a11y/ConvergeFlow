@@ -225,7 +225,7 @@ function ResourcesHero({ page }: { page: SitePage }) {
         <h1 id="page-title" className={styles.heroTitle} data-intro>
           <span className={styles.line} data-line>
             {hero.title}
-          </span>
+          </span>{" "}
           {hero.accent && (
             <span className={`${styles.line} ${styles.lineAccent}`} data-line>
               {hero.accent}
@@ -801,7 +801,7 @@ function Guides({ s }: { s: Of<"related"> }) {
               </h3>
               <p className={styles.guideBody}>{p.seo.description}</p>
               <span className={styles.guideGo} aria-hidden="true">
-                Read the guide
+                Read about this stage
                 <Arrow />
               </span>
             </li>

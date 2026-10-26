@@ -15,7 +15,7 @@ import { TitleText } from "@/components/site/Title";
 import { CopyrightYear } from "./CopyrightYear";
 import styles from "./Footer.module.css";
 
-const SOFTQUBES = { lead: "Design & Developed by", name: "Softqubes Technologies LLC", href: "https://softqubes.com/" };
+const SOFTQUBES = { lead: "Designed and developed by", name: "Softqubes Technologies LLC", href: "https://softqubes.com/" };
 
 /** What happens after a demo request (from the FAQ: discuss workflow and scope, then a proposal). */
 const NEXT = [

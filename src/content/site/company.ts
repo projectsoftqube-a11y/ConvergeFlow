@@ -25,7 +25,7 @@ export const COMPANY_PAGES: SitePage[] = [
     seo: {
       title: "How Managed RCM Works | ConvergeFlow",
       description:
-        "How ConvergeFlow works with your practice: agree scope and owners, prepare inputs, set up approved access, map payers, confirm launch criteria, then run the day-to-day work with agreed reporting.",
+        "How the work starts: agree scope and owners, set up approved access, map your payers, confirm launch criteria, then run daily queues and weekly trend reports.",
     },
     hero: {
       eyebrow: "How it works",
@@ -49,7 +49,7 @@ export const COMPANY_PAGES: SitePage[] = [
         items: [
           { title: "Agree the scope and owners", body: "The stages we own, the work your practice keeps and who escalates to whom." },
           { title: "Prepare practice inputs", body: "Complete clinical records, provider details, payer contracts and a route for timely clarification." },
-          { title: "Set up approved access", body: "Approved system access, starting with OpenDental; payer credentials encrypted in our vault with role-based access." },
+          { title: "Set up approved access", body: "Approved system access, starting with OpenDental, and payer credentials shared through the secure process agreed with you." },
           { title: "Map your payers once", body: "Each carrier routed to the right workflow, so verifications and follow-up run consistently." },
           { title: "Confirm launch criteria", body: "Work queues, escalation contacts, reporting cadence and acceptance criteria confirmed together." },
         ],
@@ -111,9 +111,9 @@ export const COMPANY_PAGES: SitePage[] = [
     label: "Technology",
     group: "company",
     seo: {
-      title: "RCM Technology & OpenDental Workflow | ConvergeFlow",
+      title: "Technology Behind Our Managed RCM | ConvergeFlow",
       description:
-        "How ConvergeFlow's workflow technology supports its specialists: information moving between your practice system and payer portals, evidence recorded and results returned, starting with OpenDental.",
+        "How workflow technology supports ConvergeFlow's specialists: payer portal checks, evidence captured with each result and exceptions routed to a person.",
     },
     hero: {
       eyebrow: "Technology",
@@ -126,7 +126,7 @@ export const COMPANY_PAGES: SitePage[] = [
         doc: {
           kind: "insurance",
           title: "Verification result",
-          ref: "Returned to OpenDental",
+          ref: "Returned to your team",
           rows: [
             ["Source", "Payer portal"],
             ["Run", "Ahead of the visit"],
@@ -151,7 +151,7 @@ export const COMPANY_PAGES: SitePage[] = [
           { title: "Payer portals", body: "Checks and follow-up run across payer portals and approved channels." },
           { title: "Specialist review", body: "People review results and handle anything automation can't." },
           { title: "Evidence recorded", body: "Portal captures, reference numbers and timestamps stored securely." },
-          { title: "Results returned", body: "Written back where your staff already look." },
+          { title: "Results returned", body: "Returned to your team with the evidence behind each result." },
         ],
       },
       {
@@ -181,10 +181,10 @@ export const COMPANY_PAGES: SitePage[] = [
         title: "Built into your PMS,",
         accent: "starting with OpenDental.",
         body: [
-          "ConvergeFlow connects to OpenDental for secure access to appointments and insurance data, and returns results where your staff already look.",
+          "We start with OpenDental practices. Access to appointments and insurance data is approved by your practice, and how results are returned to your team is confirmed with you during setup.",
           "The supported versions, the information read and written, and how failures are handled are confirmed with you during setup. Other practice systems are confirmed during scoping.",
         ],
-        points: ["Secure access to appointments and insurance data", "Results written back where staff look", "Setup details confirmed with your practice"],
+        points: ["Secure access to appointments and insurance data", "Results returned with evidence", "Setup details confirmed with your practice"],
         link: { label: "Security & data handling", href: "/technology/security/" },
       },
     ],
@@ -209,7 +209,7 @@ export const COMPANY_PAGES: SitePage[] = [
     seo: {
       title: "Security & Data Handling for RCM | ConvergeFlow",
       description:
-        "How ConvergeFlow handles practice information: approved access, encrypted payer credentials, role-based access to evidence, a full audit trail and minimum-necessary PHI.",
+        "How ConvergeFlow handles practice information: approved access, payer credential handling, evidence records and the agreements confirmed before work starts.",
     },
     hero: {
       eyebrow: "Security & data handling",
@@ -218,7 +218,7 @@ export const COMPANY_PAGES: SitePage[] = [
       lead: "The service involves appointment, insurance and claim information, and payer portal credentials. Here is how access, credentials and evidence are handled, and how to request documentation for your review.",
       actions: [{ label: "Request documentation", href: "/contact/" }, DEMO],
       visual: { kind: "none" },
-      facts: ["Encrypted credentials", "Full audit trail", "Role-based access to evidence", "Minimum-necessary PHI"],
+      facts: ["Payer credential handling", "Evidence for every check", "Approved access", "Information we work with"],
     },
     sections: [
       {
@@ -237,14 +237,14 @@ export const COMPANY_PAGES: SitePage[] = [
       {
         kind: "cards",
         eyebrow: "Access, credentials and evidence",
-        title: "The practices",
-        accent: "we operate.",
+        title: "How access and evidence",
+        accent: "are handled.",
         cols: 2,
         items: [
-          { icon: "lock", title: "Encrypted credentials", body: "Payer credentials are encrypted in our vault, with role-based access." },
-          { icon: "eye", title: "Role-based access to evidence", body: "Evidence is available to the people whose role requires it." },
-          { icon: "layers", title: "Full audit trail", body: "Activity on checks, submissions and follow-up is recorded." },
-          { icon: "shield", title: "Minimum-necessary PHI", body: "We work with the information the agreed service requires." },
+          { icon: "lock", title: "Payer credential handling", body: "How payer credentials are shared, and who can use them, is agreed with you during access setup, before the service starts." },
+          { icon: "eye", title: "Approved access", body: "We use only the system and payer access your practice approves, agreed before work starts." },
+          { icon: "layers", title: "Evidence for every check", body: "Portal captures, payer reference numbers and timestamps are kept, so you can see what was done." },
+          { icon: "shield", title: "Information we work with", body: "Appointments, insurance details, claims and remittances, as set in the agreed scope." },
         ],
       },
       {
@@ -260,14 +260,14 @@ export const COMPANY_PAGES: SitePage[] = [
       },
       {
         kind: "statement",
-        text: "We describe only the practices we operate.",
+        text: "Bring your reviewers' questions to the scoping conversation.",
         accent: "No certifications or badges are claimed here.",
         sub: "Ask for the documentation your reviewers need, and we'll provide what applies to your agreement.",
       },
     ],
     faq: [
-      { q: "How are payer credentials stored?", a: "Encrypted in our vault, with access limited by role." },
-      { q: "Can we see what was done on our accounts?", a: "Yes. Activity is recorded in an audit trail, and evidence such as portal captures and reference numbers is retained for your review." },
+      { q: "How are payer credentials handled?", a: "How credentials are shared and who can use them is agreed with you during access setup, before the service starts." },
+      { q: "Can we see what was done on our accounts?", a: "Yes. Evidence such as portal captures, payer reference numbers and timestamps is retained for your review." },
       { q: "Do you sign the agreements our organization requires?", a: "Agreements are confirmed before the service starts. Ask through the contact page and we'll route your request." },
     ],
     cta: {
@@ -284,9 +284,9 @@ export const COMPANY_PAGES: SitePage[] = [
     label: "Why ConvergeFlow",
     group: "company",
     seo: {
-      title: "Why ConvergeFlow for Managed RCM | ConvergeFlow",
+      title: "Why ConvergeFlow | Specialists Who Own the Work",
       description:
-        "Why practices choose ConvergeFlow: specialists who own the work, dental-specific detail, evidence for every step, clear accountability and reporting you can act on.",
+        "Specialists who own the work, dental-specific coding detail, evidence for every step and a named owner on every handoff. See how the team works.",
     },
     hero: {
       eyebrow: "Why ConvergeFlow",
@@ -305,7 +305,7 @@ export const COMPANY_PAGES: SitePage[] = [
         kind: "cards",
         eyebrow: "What's different",
         title: "Six reasons",
-        accent: "practices hand it over.",
+        accent: "to hand the work over.",
         cols: 3,
         items: [
           { icon: "users", title: "Fully managed service", body: "Our specialists own the work, not just a dashboard." },
@@ -356,7 +356,7 @@ export const COMPANY_PAGES: SitePage[] = [
     seo: {
       title: "About ConvergeFlow | Managed Revenue Cycle Services",
       description:
-        "ConvergeFlow provides managed revenue cycle services for dental and medical practices, combining workflow technology with specialists who own verification, claims, payments and follow-up.",
+        "Who runs ConvergeFlow's managed revenue cycle service, how the specialist team owns the work, and how to reach us.",
     },
     hero: {
       eyebrow: "About ConvergeFlow",
@@ -428,7 +428,7 @@ export const COMPANY_PAGES: SitePage[] = [
     seo: {
       title: "Managed RCM Pricing & Proposals | ConvergeFlow",
       description:
-        "ConvergeFlow pricing is based on your agreed scope. Learn what shapes a proposal, what it should include and what to confirm before you start.",
+        "ConvergeFlow doesn't publish set prices. See what shapes a proposal for your practice, what to bring, and how to request one.",
     },
     hero: {
       eyebrow: "Pricing",
@@ -490,7 +490,7 @@ export const COMPANY_PAGES: SitePage[] = [
       title: "Get a proposal",
       accent: "for your scope.",
       body: "Tell us which stages you want help with and we'll prepare a proposal around them.",
-      actions: [{ label: "Request a proposal", href: "/demo/" }, { label: "Contact the team", href: "/contact/" }],
+      actions: [{ label: "Request a demo and proposal", href: "/demo/" }, { label: "Contact the team", href: "/contact/" }],
     },
   },
 
@@ -500,8 +500,8 @@ export const COMPANY_PAGES: SitePage[] = [
     label: "Contact",
     group: "company",
     seo: {
-      title: "Contact ConvergeFlow | Talk to the Team",
-      description: "Contact ConvergeFlow about managed revenue cycle services for your dental or medical practice. Email or call Hari Patel, or request a demo.",
+      title: "Contact ConvergeFlow | Talk to the RCM Team",
+      description: "Talk to the ConvergeFlow team about managed revenue cycle work for your practice. Email or call Hari Patel, or request a demo of how we'd work.",
     },
     hero: {
       eyebrow: "Contact",
@@ -540,8 +540,8 @@ export const COMPANY_PAGES: SitePage[] = [
     label: "Request a Demo",
     group: "company",
     seo: {
-      title: "Request a Demo | ConvergeFlow",
-      description: "Request a ConvergeFlow demo: see how verification, coding, claims, posting and follow-up would work for your practice, and which parts our team would own.",
+      title: "Request a Managed RCM Demo | ConvergeFlow",
+      description: "Request a conversation about your practice workflow: the stages our specialists would own, how you'd see each handoff, and what a proposal covers.",
     },
     hero: {
       eyebrow: "Request a demo",
@@ -596,7 +596,7 @@ export const COMPANY_PAGES: SitePage[] = [
     group: "company",
     seo: {
       title: "RCM Brochures & Resources | ConvergeFlow",
-      description: "Download the ConvergeFlow RCM and dental billing brochures, and explore guides to each stage of the managed revenue cycle.",
+      description: "Download the ConvergeFlow revenue cycle and dental billing brochures, and find plain-language explanations of each stage of the managed service.",
     },
     hero: {
       eyebrow: "Resources",

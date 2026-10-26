@@ -101,7 +101,7 @@ export function Hero() {
         <h1 id="home-title" className={styles.title} data-intro>
           <span className={styles.line} data-line>
             {HOME_HERO.title}
-          </span>
+          </span>{" "}
           <span className={`${styles.line} ${styles.lineAccent}`} data-line>
             {HOME_HERO.accent}
           </span>

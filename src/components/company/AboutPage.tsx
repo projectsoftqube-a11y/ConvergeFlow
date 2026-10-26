@@ -137,7 +137,7 @@ function AboutHero({ page, roles }: { page: SitePage; roles: { title: string; ic
           <h1 id="page-title" className={inner.heroTitle} data-intro>
             <span className={inner.line} data-line>
               {hero.title}
-            </span>
+            </span>{" "}
             {hero.accent && (
               <span className={`${inner.line} ${inner.lineAccent}`} data-line>
                 {hero.accent}

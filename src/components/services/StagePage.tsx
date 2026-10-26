@@ -127,7 +127,7 @@ function StageHero({ page, i }: { page: SitePage; i: number }) {
           <h1 id="page-title" className={styles.heroTitle} data-intro>
             <span className={styles.line} data-line>
               {hero.title}
-            </span>
+            </span>{" "}
             {hero.accent && (
               <span className={`${styles.line} ${styles.lineAccent}`} data-line>
                 {hero.accent}

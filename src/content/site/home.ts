@@ -4,9 +4,9 @@
 import type { Cta, Faq } from "./types";
 
 export const HOME_META = {
-  title: "Managed Revenue Cycle Management for Dental & Medical Practices | ConvergeFlow",
+  title: "Managed RCM for Dental & Medical Practices | ConvergeFlow",
   description:
-    "ConvergeFlow's specialists manage the revenue cycle for dental and medical practices: benefits verified before care, claims prepared and followed to a decision, payments posted and balances closed.",
+    "ConvergeFlow's specialists run your revenue cycle: benefits verified before care, claims followed to a decision, payments posted and balances closed.",
 };
 
 export const HOME_HERO = {
@@ -88,7 +88,7 @@ export const HOME_FACTS: { title: string; accent: string; intro: string; cells: 
   intro: "The cycle ends only when the account has a documented financial resolution.",
   cells: [
     { value: "8", label: "Managed stages", detail: "From registration to A/R and reporting.", viz: "ring" },
-    { value: "1", label: "Accountable team", detail: "Owning every stage in your agreed scope.", viz: "core" },
+    { value: "One", label: "Accountable team", detail: "Owning every stage in your agreed scope.", viz: "core" },
     { value: "Daily", label: "Queue reviews", detail: "Incomplete records, holds, rejections, unposted receipts.", viz: "clock" },
     { value: "Weekly", label: "Trend reviews", detail: "Denial causes, aging, underpayments, attachment delays.", viz: "week" },
   ],

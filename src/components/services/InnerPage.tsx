@@ -159,7 +159,7 @@ export function HeroCopy({ page, center = false, actions = true }: { page: SiteP
       <h1 id="page-title" className={styles.heroTitle} data-center={center || undefined} data-intro>
         <span className={styles.line} data-line>
           {hero.title}
-        </span>
+        </span>{" "}
         {hero.accent && (
           <span className={`${styles.line} ${styles.lineAccent}`} data-line>
             {hero.accent}

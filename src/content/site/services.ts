@@ -31,7 +31,7 @@ export const JOURNEY: JourneyGroup[] = [
     stages: [
       { label: "Payment posting", href: "/services/payment-posting/", body: "ERAs and EOBs posted and matched to deposits; adjustments traceable." },
       { label: "Denial management", href: "/services/denial-management/", body: "Root cause found; corrected, reconsidered or appealed on deadline." },
-      { label: "AR & reporting", href: "/services/ar-management/", body: "Aging worked by priority, balances verified and closed with a documented owner." },
+      { label: "A/R & reporting", href: "/services/ar-management/", body: "Aging worked by priority, balances verified and closed with a documented owner." },
     ],
   },
 ];
@@ -50,9 +50,9 @@ export const SERVICE_PAGES: SitePage[] = [
     label: "Services",
     group: "services",
     seo: {
-      title: "Managed Revenue Cycle Management Services | ConvergeFlow",
+      title: "Revenue Cycle Management Services | ConvergeFlow",
       description:
-        "Managed RCM for dental and medical practices: benefits verified before care, claims prepared and followed to a decision, payments posted and balances resolved.",
+        "Eight managed stages, from registration and benefits checks to claims, payment posting, denials and A/R. Choose the stages our specialists own.",
     },
     hero: {
       eyebrow: "Managed revenue cycle services",
@@ -120,7 +120,7 @@ export const SERVICE_PAGES: SitePage[] = [
       },
       {
         q: "Can we start with only some of the stages?",
-        a: "Scope is agreed practice by practice. Many practices start with the stages that cause the most rework, such as benefits verification or claim preparation, and the scope is recorded so ownership is clear.",
+        a: "Scope is agreed practice by practice and recorded so ownership is clear. You can start with the stages that cause the most rework, such as benefits verification or claim preparation.",
       },
       {
         q: "Which practice management systems do you work with?",
@@ -135,7 +135,7 @@ export const SERVICE_PAGES: SitePage[] = [
       title: "Bring your workflow.",
       accent: "We'll show you the stages we'd own.",
       body: "Tell us where claims stall today and we'll walk through how the team would handle it.",
-      actions: [DEMO, { label: "Download the RCM brochure", href: "/resources/" }],
+      actions: [DEMO, { label: "See brochures", href: "/resources/" }],
     },
   },
 
@@ -148,7 +148,7 @@ export const SERVICE_PAGES: SitePage[] = [
     seo: {
       title: "Patient Registration & Demographic Review | ConvergeFlow",
       description:
-        "Managed patient registration review: identity, subscriber and member details, provider and location context and duplicate-record checks before the visit.",
+        "Legal name, date of birth, subscriber details and member ID verified before the visit, with duplicate records caught before they reach a claim.",
     },
     hero: {
       eyebrow: "Before care · Registration",
@@ -257,9 +257,9 @@ export const SERVICE_PAGES: SitePage[] = [
     group: "services",
     stage: stageOf("/services/eligibility-verification/"),
     seo: {
-      title: "Insurance Eligibility & Benefits Verification | ConvergeFlow",
+      title: "Insurance Eligibility Verification Services | ConvergeFlow",
       description:
-        "Managed eligibility and benefits verification: coverage dates, deductibles, annual maximums, frequencies, waiting periods and payer order, recorded with evidence before the visit.",
+        "Coverage, deductibles, maximums, frequencies and waiting periods checked before the visit, with the payer reference, date and source recorded.",
     },
     hero: {
       eyebrow: "Before care · Eligibility & benefits",
@@ -316,7 +316,7 @@ export const SERVICE_PAGES: SitePage[] = [
         eyebrow: "Evidence and system delivery",
         title: "Evidence for",
         accent: "every check.",
-        body: "Results are written back where staff already look, starting with OpenDental, with the evidence behind each answer stored securely.",
+        body: "Results are returned with the evidence behind each answer, starting with OpenDental practices, and stored securely.",
         items: [
           { icon: "eye", title: "Portal capture", body: "What the payer portal showed at the time of the check." },
           { icon: "stamp", title: "Payer reference", body: "Reference number recorded against the patient and visit." },
@@ -332,7 +332,7 @@ export const SERVICE_PAGES: SitePage[] = [
         cols: 3,
         items: [
           { icon: "refresh", title: "Portal changes", body: "When a payer portal changes, specialists adjust the workflow and keep checks moving." },
-          { icon: "key", title: "MFA prompts", body: "Multi-factor prompts and access issues are resolved by the team, not left in a queue." },
+          { icon: "key", title: "MFA prompts", body: "Portal changes, MFA (multi-factor authentication) prompts and unclear responses go to a specialist." },
           { icon: "alert", title: "Unclear responses", body: "Incomplete or conflicting answers are followed up and noted before the visit." },
         ],
       },
@@ -376,9 +376,9 @@ export const SERVICE_PAGES: SitePage[] = [
     group: "services",
     stage: stageOf("/services/prior-authorization/"),
     seo: {
-      title: "Prior Authorization & Predetermination Support | ConvergeFlow",
+      title: "Prior Authorization & Predetermination | ConvergeFlow",
       description:
-        "Managed prior authorization support: requirements checked, requests prepared with documentation, and decisions, reference numbers and valid dates tracked against the service.",
+        "Authorization requirements checked, requests tracked to a decision, and reference numbers and valid dates recorded against the planned service.",
     },
     hero: {
       eyebrow: "Before care · Prior authorization",
@@ -471,8 +471,8 @@ export const SERVICE_PAGES: SitePage[] = [
       },
     ],
     cta: {
-      title: "No more approvals",
-      accent: "lost between visits.",
+      title: "Approvals tracked",
+      accent: "from request to decision.",
       body: "Walk us through your authorization list and we'll show you how each one would be tracked.",
       actions: [DEMO, { label: "Dental coding", href: "/services/dental-coding/" }],
     },
@@ -487,7 +487,7 @@ export const SERVICE_PAGES: SitePage[] = [
     seo: {
       title: "Dental Coding & Claim Preparation (CDT) | ConvergeFlow",
       description:
-        "Managed dental coding and claim preparation: CDT codes in effect for the date of service, tooth and surface detail, narratives and attachments matched to the clinical record.",
+        "CDT codes matched to the documented care, with tooth, surface, narrative and attachment detail checked before each dental claim is created.",
     },
     hero: {
       eyebrow: "Claims · Dental coding & preparation",
@@ -573,9 +573,9 @@ export const SERVICE_PAGES: SitePage[] = [
     group: "services",
     stage: stageOf("/services/claims-submission/"),
     seo: {
-      title: "Claims Submission, Scrubbing & Claim Status | ConvergeFlow",
+      title: "Claims Submission & Claim Status Follow-up | ConvergeFlow",
       description:
-        "Managed claims submission: required fields, code edits and payer rules checked, claims sent through approved channels with proof, and rejections and status followed to a decision.",
+        "Claims scrubbed for required fields and payer rules, sent through payer-approved channels with proof of transmission, and followed to a decision.",
     },
     hero: {
       eyebrow: "Claims · Submission",
@@ -678,7 +678,7 @@ export const SERVICE_PAGES: SitePage[] = [
     seo: {
       title: "Payment Posting & Reconciliation (ERA/EOB) | ConvergeFlow",
       description:
-        "Managed payment posting: ERAs and EOBs posted to the right claim, matched to EFT or check deposits, adjustments reviewed and secondary coverage handed off before patients are billed.",
+        "ERAs and EOBs posted to the right claim and matched to EFT or check deposits, with every adjustment traceable and secondary coverage passed on.",
     },
     hero: {
       eyebrow: "Payments & follow-up · Payment posting",
@@ -740,7 +740,7 @@ export const SERVICE_PAGES: SitePage[] = [
       },
     ],
     faq: [
-      { q: "What's the difference between an ERA and an EOB?", a: "An ERA is the electronic remittance advice a payer sends with payment; an EOB is the paper explanation of benefits. Both are posted to the claim they pay." },
+      { q: "What's the difference between an ERA and an EOB?", a: "An EOB (explanation of benefits) is the payer's statement of how a claim was processed, sent on paper or electronically; an ERA (electronic remittance advice) is the electronic version used for posting. Both are posted to the claim they pay." },
       { q: "Is a contractual adjustment ever billed to the patient?", a: "No. A contractual adjustment is written off according to your contract and never billed to the patient." },
       { q: "Who handles balances that don't resolve at posting?", a: "Underpayments and denials go to denial management; remaining balances are worked through A/R follow-up." },
     ],
@@ -759,16 +759,16 @@ export const SERVICE_PAGES: SitePage[] = [
     group: "services",
     stage: stageOf("/services/denial-management/"),
     seo: {
-      title: "Denial Management, Appeals & Underpayment Review | ConvergeFlow",
+      title: "Denial Management & Appeals | ConvergeFlow",
       description:
-        "Managed denial management: root cause classified, then corrected, reconsidered or appealed on deadline, with documented ownership and underpayment review against your contract.",
+        "Denials classified by root cause, then corrected, reconsidered or appealed on deadline, with underpayments reviewed against your payer contract.",
     },
     hero: {
       eyebrow: "Payments & follow-up · Denial management",
       title: "Denials worked to the root cause,",
       accent: "on deadline.",
       lead: "When a payer denies or underpays a claim, our team classifies the root cause, then corrects, reconsiders or appeals within the payer's deadline, with every step documented and owned.",
-      actions: [DEMO, { label: "Next: AR & reporting", href: "/services/ar-management/" }],
+      actions: [DEMO, { label: "Next: A/R & reporting", href: "/services/ar-management/" }],
       visual: {
         kind: "document",
         doc: {
@@ -830,7 +830,7 @@ export const SERVICE_PAGES: SitePage[] = [
       },
       {
         kind: "statement",
-        text: "We work every denial to a documented decision.",
+        text: "Each denial in your agreed scope is classified, given an owner and followed to a documented decision.",
         accent: "Outcomes remain payer-dependent.",
         sub: "No recovery or reimbursement outcome is guaranteed.",
       },
@@ -841,26 +841,26 @@ export const SERVICE_PAGES: SitePage[] = [
       { q: "How will we see denial trends?", a: "Denial causes are reviewed weekly with your team, alongside aging balances, underpayments and attachment delays." },
     ],
     cta: {
-      title: "Stop losing claims",
-      accent: "to missed deadlines.",
+      title: "Appeals filed on deadline,",
+      accent: "with an owner on each.",
       body: "Bring your open denials and we'll show you how each would be classified and owned.",
-      actions: [DEMO, { label: "AR & reporting", href: "/services/ar-management/" }],
+      actions: [DEMO, { label: "A/R & reporting", href: "/services/ar-management/" }],
     },
   },
 
   /* ------------------------------------------------------------------ AR */
   {
     route: "/services/ar-management/",
-    label: "AR & reporting",
+    label: "A/R & reporting",
     group: "services",
     stage: stageOf("/services/ar-management/"),
     seo: {
       title: "A/R Follow-up & Revenue Cycle Reporting | ConvergeFlow",
       description:
-        "Managed A/R follow-up: aging worked by priority, every payer contact documented, patients billed only for verified balances, credits resolved, and reporting on measures you agree.",
+        "Accounts receivable worked by age and value, every payer contact documented, patients billed only for verified balances and credits resolved.",
     },
     hero: {
-      eyebrow: "Payments & follow-up · AR & reporting",
+      eyebrow: "Payments & follow-up · A/R & reporting",
       title: "Every balance closed",
       accent: "with a documented owner.",
       lead: "Aging is worked by age and value, every payer contact is documented, patients are billed only for verified amounts and credits are resolved, with reporting on measures we agree together.",

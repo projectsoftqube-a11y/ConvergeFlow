@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { gsap } from "@/lib/gsap";
 import { getLenis } from "@/components/motion/SmoothScroll";
 import { markSiteReady } from "@/lib/siteReady";
@@ -18,6 +18,12 @@ const WORD = "ConvergeFlow";
 const FLOW_FROM = 8; // "Flow" is set in mint
 const DIGITS = Array.from({ length: 10 }, (_, d) => d);
 const pad = (n: number) => String(n).padStart(2, "0");
+
+/* Client-only detection: false during SSR/hydration, true once mounted — so the loader's
+   counter and stage text never ship in the server HTML (CF-013). */
+const noopSubscribe = () => () => {};
+const onClient = () => true;
+const onServer = () => false;
 
 /**
  * Pace of the minimum timeline, in eight beats (one per stage): within each beat the
@@ -50,8 +56,12 @@ const paced = (t: number) => {
 export function Preloader() {
   const ref = useRef<HTMLDivElement>(null);
   const [gone, setGone] = useState(false);
+  // Render only after mount (see onClient/onServer) so the loader markup is absent
+  // from the server HTML that crawlers and AI tools read first (CF-013).
+  const mounted = useSyncExternalStore(noopSubscribe, onClient, onServer);
 
   useEffect(() => {
+    if (!mounted) return;
     const root = ref.current;
     if (!root) return;
     const html = document.documentElement;
@@ -165,9 +175,9 @@ export function Preloader() {
       // Not marking the site ready here: in development React re-runs this effect once,
       // and hero intros have their own failsafe if the loader never finishes.
     };
-  }, []);
+  }, [mounted]);
 
-  if (gone) return null;
+  if (!mounted || gone) return null;
 
   return (
     <div ref={ref} className={styles.root} aria-hidden="true">
