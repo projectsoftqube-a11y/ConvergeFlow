@@ -435,7 +435,7 @@ export const COMPANY_PAGES: SitePage[] = [
       title: "Pricing built around",
       accent: "your scope.",
       lead: "We don't publish fixed prices. A proposal depends on the work your practice wants our team to own; here is what we'll ask about, and what a proposal should cover.",
-      actions: [{ label: "Request a proposal", href: "/demo/" }, { label: "See the services", href: "/services/" }],
+      actions: [],
       visual: { kind: "none" },
     },
     sections: [
@@ -508,7 +508,7 @@ export const COMPANY_PAGES: SitePage[] = [
       title: "Talk to",
       accent: "the team.",
       lead: "For questions about managed revenue cycle services for your practice, contact Hari Patel directly or request a demo.",
-      actions: [{ label: `Email ${CONTACT.name.split(" ")[0]}`, href: `mailto:${CONTACT.email}` }, DEMO],
+      actions: [],
       visual: { kind: "contact" },
     },
     sections: [

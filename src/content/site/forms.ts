@@ -1,7 +1,6 @@
 /** Demo request form (V2: concise; name, email and organization required). */
 export const DEMO_FORM = {
   title: "Request a demo",
-  intro: "Business contact details only. Please don't include patient names, identifiers, insurance documents or clinical information.",
   fields: [
     { label: "First name", required: true },
     { label: "Last name", required: true },
@@ -12,7 +11,6 @@ export const DEMO_FORM = {
     { label: "What would you like to discuss?", required: false },
   ],
   submit: "Request a Demo",
-  privacy: "Please don't include patient names, identifiers, insurance documents or clinical information.",
 };
 
 export const PRACTICE_TYPES = ["Dental practice", "DSO or group practice", "Medical practice", "Other"];

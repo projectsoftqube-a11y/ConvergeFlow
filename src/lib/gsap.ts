@@ -2,11 +2,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
-import { TextPlugin } from "gsap/TextPlugin";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, SplitText, ScrambleTextPlugin, TextPlugin, DrawSVGPlugin);
+  gsap.registerPlugin(ScrollTrigger, SplitText, ScrambleTextPlugin, DrawSVGPlugin);
   gsap.defaults({ ease: "expo.out", duration: 1.1 });
   // Shared intros animate optional parts (tabs, photos, proof chips) that only some pages have;
   // an absent part is expected, so GSAP shouldn't warn about it.

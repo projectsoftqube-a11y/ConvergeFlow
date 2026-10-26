@@ -18,7 +18,6 @@ export const HOME_HERO = {
     { label: "Request a Demo", href: "/demo/" },
     { label: "Explore services", href: "/services/" },
   ],
-  facts: ["For dental and medical practices", "Starting with OpenDental", "Evidence for every check"],
 };
 
 export const HOME_FAQ: Faq[] = [

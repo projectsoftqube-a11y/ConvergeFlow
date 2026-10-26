@@ -12,7 +12,3 @@ export function getSitePage(route: string): SitePage | undefined {
 }
 
 export const routeFromSlug = (slug: string[]) => `/${slug.join("/")}/`;
-
-export function pageByRoute(route: string) {
-  return SITE_PAGES.find((p) => p.route === route);
-}

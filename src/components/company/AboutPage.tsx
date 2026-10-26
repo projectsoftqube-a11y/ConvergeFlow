@@ -8,7 +8,7 @@ import { useMotion } from "@/components/motion/useMotion";
 import { gsap } from "@/lib/gsap";
 import { onSiteReady } from "@/lib/siteReady";
 import { liveHref } from "@/content/navigation";
-import { pageByRoute } from "@/content/site";
+import { getSitePage } from "@/content/site";
 import { STAGES } from "@/content/site/services";
 import type { IconName, Section, SitePage } from "@/content/site/types";
 import { Aurora } from "@/components/fx/Aurora";
@@ -451,7 +451,7 @@ function HandoffRelay({ s }: { s: Of<"steps"> }) {
 
 /** "Who we help": photo tiles for each audience; on wide screens the tile you point at opens wider. */
 function PracticeTiles({ s }: { s: Of<"related"> }) {
-  const pages = s.routes.map((r) => pageByRoute(r)).filter((p): p is SitePage => Boolean(p && liveHref(p.route)));
+  const pages = s.routes.map((r) => getSitePage(r)).filter((p): p is SitePage => Boolean(p && liveHref(p.route)));
   return (
     <section id={s.id} className={`section ${styles.tiles}`}>
       <div className="container">

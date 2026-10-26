@@ -7,7 +7,7 @@ import { BUILT_ROUTES } from "./site";
 import { JOURNEY } from "./site/services";
 
 export type NavLink = { label: string; href: string; note?: string };
-export type NavColumn = { label: string; links: NavLink[] };
+type NavColumn = { label: string; links: NavLink[] };
 export type NavGroup = {
   label: string;
   href?: string;

@@ -10,7 +10,7 @@ import { getLenis } from "@/components/motion/SmoothScroll";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { onSiteReady } from "@/lib/siteReady";
 import { liveHref, navGroupFor } from "@/content/navigation";
-import { pageByRoute } from "@/content/site";
+import { getSitePage } from "@/content/site";
 import { BROCHURES, brochureFor, type Brochure } from "@/content/site/brochures";
 import type { IconName, Section, SitePage } from "@/content/site/types";
 import { Aurora } from "@/components/fx/Aurora";
@@ -55,7 +55,7 @@ const categoryOf = (route: string) => (route.startsWith("/services/") ? "Service
 /** The guide pages that are live, with the area each belongs to. */
 const guideList = (routes: string[]) =>
   routes
-    .map((r) => pageByRoute(r))
+    .map((r) => getSitePage(r))
     .filter((p): p is SitePage => Boolean(p && liveHref(p.route)))
     .map((p) => ({ page: p, cat: categoryOf(p.route) }));
 

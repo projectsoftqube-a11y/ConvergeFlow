@@ -45,11 +45,11 @@ export type IconName =
   | "route"
   | "stamp";
 
-export type Action = { label: string; href: string };
+type Action = { label: string; href: string };
 
-export type Item = { title: string; body: string; icon?: IconName };
+type Item = { title: string; body: string; icon?: IconName };
 
-export type Heading = {
+type Heading = {
   id?: string;
   eyebrow?: string;
   title: string;
@@ -69,7 +69,7 @@ export type DocSpec = {
 
 export type Photo = { src: string; alt: string; caption?: string };
 
-export type HeroVisual =
+type HeroVisual =
   | { kind: "document"; doc: DocSpec }
   | { kind: "photo"; photo: Photo; note?: string; chips?: string[] }
   | { kind: "form" }

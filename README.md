@@ -35,7 +35,7 @@ src/
 
 ## Animation conventions
 
-- Markup opts into scroll reveals with `data-anim="fade|stagger|lines|clip|draw|count"`; `MotionScope` wraps each page so reveals start only after hydration.
+- Markup opts into scroll reveals with `data-anim="fade|stagger|words|scrub|stamp"`; `MotionScope` wraps each page so reveals start only after hydration.
 - Component choreography uses `useMotion(ref, ({ motion, desktop }) => …)` — a `gsap.matchMedia` context that reverts on unmount and when reduced-motion changes.
 - `prefers-reduced-motion: reduce` disables Lenis and every tween; content is never hidden without JavaScript.
 
