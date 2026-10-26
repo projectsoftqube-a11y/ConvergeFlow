@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useRef, useState, type CSSProperties, type FormEvent } from "react";
+import { useId, useRef, useState, type ChangeEvent, type CSSProperties, type FocusEvent, type FormEvent } from "react";
 import { useMotion } from "@/components/motion/useMotion";
 import { gsap } from "@/lib/gsap";
 import { onSiteReady } from "@/lib/siteReady";
@@ -18,19 +18,47 @@ import styles from "./DemoPage.module.css";
 
 type Of<K extends Section["kind"]> = Extract<Section, { kind: K }>;
 type Field = { label: string; required: boolean };
+type Control = {
+  name: string;
+  type?: string;
+  autoComplete?: string;
+  kind?: "select" | "textarea";
+  options?: string[];
+  min?: number;
+  max?: number;
+  pattern?: RegExp;
+  patternMsg?: string;
+};
+type FieldEl = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
 const vars = (v: Record<string, string | number>) => v as CSSProperties;
 
-/** How each approved field is rendered. */
-const CONTROLS: Record<string, { name: string; type?: string; autoComplete?: string; kind?: "select" | "textarea"; options?: string[] }> = {
-  "First name": { name: "firstName", autoComplete: "given-name" },
-  "Last name": { name: "lastName", autoComplete: "family-name" },
-  "Work email": { name: "email", type: "email", autoComplete: "email" },
-  "Practice or organization": { name: "organization", autoComplete: "organization" },
+/** Letters (any language), then letters, spaces, hyphens, apostrophes or full stops. */
+const NAME = /^\p{L}[\p{L}\p{M}' ’.-]*$/u;
+const NAME_MSG = "Please use letters, spaces, hyphens or apostrophes only.";
+const EMAIL = /^[A-Za-z0-9_%+-]+(?:\.[A-Za-z0-9_%+-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/;
+
+/** How each approved field is rendered and checked. */
+const CONTROLS: Record<string, Control> = {
+  "First name": { name: "firstName", autoComplete: "given-name", min: 2, max: 50, pattern: NAME, patternMsg: NAME_MSG },
+  "Last name": { name: "lastName", autoComplete: "family-name", min: 2, max: 50, pattern: NAME, patternMsg: NAME_MSG },
+  "Work email": { name: "email", type: "email", autoComplete: "email", max: 254, pattern: EMAIL, patternMsg: "Please enter a valid email address, like name@practice.com." },
+  "Practice or organization": { name: "organization", autoComplete: "organization", min: 2, max: 100, pattern: /[\p{L}\p{N}]/u, patternMsg: "Please enter your practice or organization name." },
   "Practice type": { name: "practiceType", kind: "select", options: PRACTICE_TYPES },
-  "Primary PMS or EHR": { name: "pmsEhr" },
-  "What would you like to discuss?": { name: "discuss", kind: "textarea" },
+  "Primary PMS or EHR": { name: "pmsEhr", max: 100 },
+  "What would you like to discuss?": { name: "discuss", kind: "textarea", max: 600 },
 };
+
+/** The first problem with a field's value, or "" when it's valid. */
+function check(f: Field, raw: string) {
+  const spec = CONTROLS[f.label];
+  const v = raw.trim();
+  if (!v) return f.required ? `Please ${spec?.kind === "select" ? "choose" : "enter"} your ${f.label.toLowerCase()}.` : "";
+  if (spec?.min && v.length < spec.min) return `${f.label} must be at least ${spec.min} characters.`;
+  if (spec?.max && v.length > spec.max) return `${f.label} must be ${spec.max} characters or fewer.`;
+  if (spec?.pattern && !spec.pattern.test(v)) return spec.patternMsg ?? `Please check your ${f.label.toLowerCase()}.`;
+  return "";
+}
 
 /** The form in three short steps: about you, your practice, what to discuss. */
 const STEPS: { title: string; icon: IconName; fields: string[] }[] = [
@@ -65,23 +93,30 @@ function DemoWizard({ topics }: { topics: string[] }) {
   const [step, setStep] = useState(0);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [picked, setPicked] = useState<string[]>([]);
+  const [chars, setChars] = useState(0);
   const fields = DEMO_FORM.fields as Field[];
   const last = STEPS.length - 1;
 
   const fieldsOf = (k: number) => STEPS[k].fields.map((label) => fields.find((f) => f.label === label)).filter((f): f is Field => Boolean(f));
 
-  /** Checks the step's required fields before moving on. */
+  const setError = (label: string, msg: string) =>
+    setErrors((e) => {
+      if ((e[label] ?? "") === msg) return e;
+      const next = { ...e };
+      if (msg) next[label] = msg;
+      else delete next[label];
+      return next;
+    });
+
+  /** Checks every field in the step before moving on, focusing the first one to fix. */
   const validate = (k: number) => {
     const form = formRef.current;
     if (!form) return true;
     const next: Record<string, string> = {};
     for (const f of fieldsOf(k)) {
-      const spec = CONTROLS[f.label];
-      const el = form.elements.namedItem(spec?.name ?? "") as HTMLInputElement | null;
-      if (!el) continue;
-      const v = el.value.trim();
-      if (f.required && !v) next[f.label] = `Please enter your ${f.label.toLowerCase()}.`;
-      else if (spec?.type === "email" && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) next[f.label] = "Please enter a valid email address.";
+      const el = form.elements.namedItem(CONTROLS[f.label]?.name ?? "") as FieldEl | null;
+      const msg = el ? check(f, el.value) : "";
+      if (msg) next[f.label] = msg;
     }
     setErrors(next);
     const first = Object.keys(next)[0];
@@ -95,7 +130,11 @@ function DemoWizard({ topics }: { topics: string[] }) {
     setStep(k);
   };
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => e.preventDefault();
+  // Earlier steps are checked on the way to the last one. Sending is added with the SMTP setup.
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    validate(last);
+  };
 
   return (
     <form ref={formRef} className={styles.wizard} onSubmit={onSubmit} noValidate aria-labelledby={`${id}-title`}>
@@ -133,7 +172,22 @@ function DemoWizard({ topics }: { topics: string[] }) {
             const spec = CONTROLS[f.label] ?? { name: f.label.toLowerCase().replace(/\W+/g, "-") };
             const fid = `${id}-${spec.name}`;
             const err = errors[f.label];
-            const common = { id: fid, name: spec.name, required: f.required, "aria-required": f.required || undefined, "aria-invalid": err ? true : undefined, "aria-describedby": err ? `${fid}-err` : undefined };
+            const counted = spec.kind === "textarea" && spec.max;
+            const describedBy = [err && `${fid}-err`, counted && `${fid}-count`].filter(Boolean).join(" ") || undefined;
+            const common = {
+              id: fid,
+              name: spec.name,
+              required: f.required,
+              "aria-required": f.required || undefined,
+              "aria-invalid": err ? true : undefined,
+              "aria-describedby": describedBy,
+              // Checked when the visitor leaves the field; once flagged, rechecked as they type so the message clears when fixed.
+              onBlur: (e: FocusEvent<FieldEl>) => setError(f.label, check(f, e.currentTarget.value)),
+              onChange: (e: ChangeEvent<FieldEl>) => {
+                if (counted) setChars(e.currentTarget.value.length);
+                if (err) setError(f.label, check(f, e.currentTarget.value));
+              },
+            };
             return (
               <div key={spec.name} className={styles.field} data-invalid={err ? "" : undefined} data-wide={spec.kind === "textarea" || spec.name === "organization" || undefined}>
                 <label htmlFor={fid}>
@@ -154,13 +208,18 @@ function DemoWizard({ topics }: { topics: string[] }) {
                     </select>
                   </div>
                 ) : spec.kind === "textarea" ? (
-                  <textarea {...common} rows={4} maxLength={600} />
+                  <textarea {...common} rows={4} maxLength={spec.max} />
                 ) : (
-                  <input {...common} type={spec.type ?? "text"} autoComplete={spec.autoComplete} />
+                  <input {...common} type={spec.type ?? "text"} autoComplete={spec.autoComplete} maxLength={spec.max} />
                 )}
                 {err && (
                   <p id={`${fid}-err`} className={styles.error}>
                     {err}
+                  </p>
+                )}
+                {counted && (
+                  <p id={`${fid}-count`} className={styles.count}>
+                    {chars} / {spec.max} characters
                   </p>
                 )}
               </div>

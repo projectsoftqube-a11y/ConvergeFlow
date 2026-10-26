@@ -364,6 +364,13 @@
   color: #ffb3a7;
 }
 
+.count {
+  justify-self: end;
+  font-size: 0.875rem;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
 /* topics to cover, as chips */
 .topics {
   display: grid;
