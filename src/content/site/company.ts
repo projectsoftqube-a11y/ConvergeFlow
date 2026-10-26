@@ -524,6 +524,28 @@ export const COMPANY_PAGES: SitePage[] = [
           { icon: "user", title: "Patients", body: "For bills or appointments, please contact your dental or medical practice directly." },
         ],
       },
+      {
+        kind: "chips",
+        eyebrow: "Before you write",
+        title: "What to",
+        accent: "include.",
+        chips: [
+          "Your name, role and practice or organization",
+          "Practice type and number of locations",
+          "Your practice management system",
+          "The stages you'd like help with",
+          "Where claims stall today",
+        ],
+      },
+      {
+        kind: "feature",
+        eyebrow: "Data safety",
+        title: "Keep patient and account data",
+        accent: "out of email.",
+        body: [
+          "Please don't send patient information, account numbers or payer portal credentials by email or phone. If access is needed, we'll agree a secure way to share it during setup.",
+        ],
+      },
     ],
     faq: [],
     cta: {

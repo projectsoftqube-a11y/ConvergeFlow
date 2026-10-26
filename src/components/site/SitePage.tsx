@@ -19,6 +19,9 @@ import { navGroupFor } from "@/content/navigation";
 import { getSitePage } from "@/content/site";
 import { SiteFaq } from "./SiteFaq";
 
+/** Draft 1200×630 social share image; design may replace it with a vector-logo version (CF-022). */
+const OG_IMAGE = { url: "/og/convergeflow-1200x630.png", width: 1200, height: 630, alt: "ConvergeFlow — managed revenue cycle for dental and medical practices" };
+
 export function metadataFor(seo: { title: string; description: string }, route: string): Metadata {
   const canonical = canonicalFor(route);
   return {
@@ -26,7 +29,8 @@ export function metadataFor(seo: { title: string; description: string }, route: 
     description: seo.description,
     robots: ROBOTS,
     alternates: canonical ? { canonical } : undefined,
-    openGraph: { title: seo.title, description: seo.description, type: "website", ...(canonical ? { url: canonical } : {}) },
+    openGraph: { title: seo.title, description: seo.description, type: "website", images: [OG_IMAGE], ...(canonical ? { url: canonical } : {}) },
+    twitter: { card: "summary_large_image", title: seo.title, description: seo.description, images: [OG_IMAGE.url] },
   };
 }
 

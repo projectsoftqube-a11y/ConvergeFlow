@@ -94,7 +94,7 @@ export function AnatomyShowcase({ s }: { s: Of<"anatomy"> }) {
 
   const isExample = tooth === EXAMPLE;
   const button = (n: number) => (
-    <button key={n} type="button" className={styles.tooth} data-kind={kindOf(n)} data-tooth aria-pressed={tooth === n} aria-label={`Tooth ${n}`} onClick={() => setTooth(n)}>
+    <button key={n} type="button" className={styles.tooth} data-kind={kindOf(n)} data-tooth aria-pressed={tooth === n} aria-label={`Tooth ${n}, ${quadrantOf(n).toLowerCase()} ${kindOf(n)}`} onClick={() => setTooth(n)}>
       <span className={styles.toothShape} aria-hidden="true" />
       <span className={styles.toothNum}>{n}</span>
     </button>
@@ -120,7 +120,7 @@ export function AnatomyShowcase({ s }: { s: Of<"anatomy"> }) {
               <span className={styles.chartHint}>Tap a tooth</span>
             </p>
             {/* Wide screens: two arches; small screens: two rows of eight per arch */}
-            <div className={styles.arches}>
+            <div className={styles.arches} role="group" aria-label="ADA Universal tooth numbering chart">
               <div className={styles.archRow} data-arch="upper">
                 {ARCH.slice(0, 16).map((t) => (
                   <span key={t.n} className={styles.slot} style={vars({ "--x": `${t.x}%`, "--y": `${t.y}%`, "--cx": t.cos, "--cy": t.sin, "--rot": `${t.rot}deg` })}>

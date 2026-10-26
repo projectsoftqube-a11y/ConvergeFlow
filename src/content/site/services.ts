@@ -239,7 +239,7 @@ export const SERVICE_PAGES: SitePage[] = [
       },
       {
         q: "Where do patient estimates come from?",
-        a: "From verified benefits, expected fees and contract allowances, covered on the eligibility page. Estimates help patients plan; final payment depends on payer adjudication.",
+        a: "From verified benefits, expected fees and contract allowances, covered on the [eligibility page](/services/eligibility-verification/). Estimates help patients plan; final payment depends on payer adjudication.",
       },
     ],
     cta: {
@@ -493,7 +493,7 @@ export const SERVICE_PAGES: SitePage[] = [
       eyebrow: "Claims · Dental coding & preparation",
       title: "Every claim",
       accent: "matches the chart.",
-      lead: "Our team reviews documented care before billing: the CDT code in effect for the date of service, tooth and surface detail, narratives and attachments, so each claim reflects what the clinical record actually shows.",
+      lead: "Our team reviews documented care before billing: the CDT (Current Dental Terminology) code in effect for the date of service, tooth and surface detail, narratives and attachments, so each claim reflects what the clinical record actually shows.",
       actions: [DEMO, { label: "Next: Claims submission", href: "/services/claims-submission/" }],
       visual: {
         kind: "document",
@@ -657,7 +657,7 @@ export const SERVICE_PAGES: SitePage[] = [
       { q: "What is an 837D?", a: "The standard electronic format for dental claims. Medical claims use their own formats and channels, confirmed during scoping." },
       {
         q: "What's the difference between a rejection and a denial?",
-        a: "A rejection happens before the payer processes the claim, usually because of a data error; we fix it at the source and resubmit. A denial is a payer decision after processing, handled through denial management.",
+        a: "A rejection happens before the payer processes the claim, usually because of a data error; we fix it at the source and resubmit. A denial is a payer decision after processing, handled through [denial management](/services/denial-management/).",
       },
       { q: "Do you submit secondary claims?", a: "Yes, within the agreed scope. Payer order is confirmed and the primary results passed on before the patient's final statement." },
     ],
